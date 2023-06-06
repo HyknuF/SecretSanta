@@ -1,15 +1,21 @@
-# Wichtelgenerator
+# Wichtelgenerator / Secret Santa Generator
 
-Free (as in Speech) and Open Source Wichtelgenerator der automatisiert Wichtelgruppierungen auslost und E-Mails an alle Teilnehmenden versendet!
+Free (as in Speech) and Open Source Secret Santa generator!
 
-## Warum, wieso, weshalb?
+The Script itself is in german at the moment, but should easily to use for everyone.
 
-Ich konnte kein Tool mit diesem Funktionsumfang finden.
-Es lost anhand der Namen zufällig Wichtelgruppierungen aus und versendet an alle Teilnehmenden eine Mail.
-- Die Anzahl der Teilnehmenden ist dynamisch und beliebig wählbar.
-- **Die Kommunikation mit dem Mailserver ist SSL verschlüsselt.**
+I will provide a english version as soon as possible.
 
-## Vorteil?
+## Background / Info
 
-Auch die planende Person kennt die Wichtelgruppierungen nicht.
-E-Mails werden automatisch mit allen Eckdaten generiert und an alle Teilnehmenden versendet.
+Last year, I couldn't find a tool with this feature set, so i wrote my own :)
+
+It randomly triggers Secret Santa groups based on their names and sends an email to all participants.
+- The number of participants is dynamic and arbitrary.
+- **Communication with the mail server is SSL encrypted.**
+
+## Advantages?
+
+- Even the planner does not know the Secret Santa groups. 
+- E-mails are automatically generated with all key data and sent to all participants.
+- No hassle for the planner
