@@ -5,8 +5,9 @@ Free (as in Speech) and Open Source Wichtelgenerator der automatisiert Wichtelgr
 ## Warum, wieso, weshalb?
 
 Ich konnte kein Tool mit diesem Funktionsumfang finden.
-Es generiert anhand der Empfänger Mailadressen und Namen zufällig Wichtelpärchen und versendet an alle Teilnehmenden eine Mail.
+Es lost anhand der Namen zufällig Wichtelgruppierungen aus und versendet an alle Teilnehmenden eine Mail.
 Die Anzahl der Teilnehmenden ist dynamisch und beliebig wählbar.
+Die Kommunikation mit dem Mailserver ist SSL verschlüsselt.
 
 ## Vorteil?
 
