@@ -13,6 +13,7 @@ Last year, I couldn't find a tool with this feature set, so i wrote my own :)
 It randomly triggers Secret Santa groups based on their names and sends an email to all participants.
 - The number of participants is dynamic and arbitrary.
 - **Communication with the mail server is SSL encrypted.**
+- It's a commandline tool, no fancy GUI and such. Only you and the text.
 
 ## Advantages?
 
