@@ -1,8 +1,8 @@
-import getpass
 import os
 import numpy as np
 import smtplib
 import zipfile
+import getpass
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
