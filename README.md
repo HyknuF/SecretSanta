@@ -1,6 +1,6 @@
 # Secret Santa Generator / Wichtelgenerator
 
-Free (as in Speech) and Open Source Secret Santa generator!
+Free and Open Source Secret Santa generator!
 
 The Script itself is in german at the moment, but should be easy to use for everyone.
 
