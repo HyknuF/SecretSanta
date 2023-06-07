@@ -2,13 +2,13 @@
 
 Free (as in Speech) and Open Source Secret Santa generator!
 
-The Script itself is in german at the moment, but should easily to use for everyone.
+The Script itself is in german at the moment, but should be easy to use for everyone.
 
-I will provide a english version as soon as possible.
+I will provide an english version as soon as possible.
 
 ## Background / Info
 
-Last year, I couldn't find a tool with this feature set, so i wrote my own :)
+Last year, I couldn't find a tool with this feature set, therefore i wrote my own :)
 
 - It randomly triggers Secret Santa groups based on their names and sends an email to all participants.
 - The number of participants is dynamic and arbitrary.
@@ -17,7 +17,7 @@ Last year, I couldn't find a tool with this feature set, so i wrote my own :)
 - Cross-Platform: Linux / Windows tested (with binaries), MacOS not tested
 - It creates a zip-file with single txt-files for each participant. This becomes handy if an email doesn't reach the participant for any reason.
 
-## Advantages?
+## Advantages
 
 - Even the planner does not know the Secret Santa groups. 
 - E-mails are automatically generated with all key data and sent to all participants.
