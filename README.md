@@ -34,4 +34,4 @@ If not, no problem, it's simple:
 ## Build from Source
 
 If you want to build your own binary from source, just download the secretsanta.py and install pyinstaller on your system (usually "**python -m pip install pyinstaller**").  
-Afterwards run "**pyinstaller secretsanta.py**" and let the magic happen :-)
+Afterwards run "**pyinstaller secretsanta.py**" and let the magic happen :)
