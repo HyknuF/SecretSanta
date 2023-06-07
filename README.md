@@ -1,4 +1,4 @@
-# Wichtelgenerator / Secret Santa Generator
+# Secret Santa Generator / Wichtelgenerator
 
 Free (as in Speech) and Open Source Secret Santa generator!
 
