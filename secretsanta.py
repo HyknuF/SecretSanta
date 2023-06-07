@@ -46,12 +46,12 @@ while True:
     except ValueError:
         print("Fehler. Nur Ganzzahlen erlaubt.")
 
-# Name und E-Mailadresse
-fam = {}
+# Name und E-Mailadresse der Teilnehmer
+name_adresse = {}
 for i in range(1, teilnehmer + 1):
     name = input(f"Name von Teilnehmer {i} eingeben: ")
     email = input(f"E-Mail-Adresse von Teilnehmer {i} eingeben: ")
-    fam[name] = email
+    name_adresse[name] = email
 
 ort = input("Wann und Wo wird gewichtelt?: ")
 betrag = input("Wichtelbetrag in €: ")
@@ -59,7 +59,7 @@ motto = input("Motto: ")
 sonstiges = input("Sonstiges?: ")
 
 # Wichtelgruppierung
-santas = list(np.random.choice(list(fam.keys()), len(list(fam.keys())), replace=False))
+santas = list(np.random.choice(list(name_adresse.keys()), len(list(name_adresse.keys())), replace=False))
 receivers = [santas[k - 1] for k in range(len(santas))]
 
 subject = input("E-Mail Betreff: ")
@@ -98,12 +98,12 @@ if attempts == max_attempts:
 send_acknowledge = input("Sollen die E-Mails jetzt versendet werden (Ja/Nein)?: ")
 
 if send_acknowledge.lower() == 'ja':
-    for i, name in enumerate(fam):
+    for i, name in enumerate(name_adresse):
         santa = santas[i]
 
         message = MIMEMultipart()
         message['From'] = absender
-        message['To'] = fam[name]
+        message['To'] = name_adresse[name]
         message['Subject'] = subject
 
         body_gesamt = (f"{body_user} \
