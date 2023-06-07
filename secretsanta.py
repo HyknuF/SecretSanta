@@ -56,7 +56,7 @@ for i in range(1, teilnehmer + 1):
     email = input(f"E-Mail-Adresse von Teilnehmer {i} eingeben: ")
     name_adresse[name] = email
 
-# Generate a random order for Secret Santas
+# Zufällige Reihenfolge generieren
 participants = list(name_adresse.keys())
 random.shuffle(participants)
 
@@ -64,11 +64,11 @@ santas = participants.copy()
 receivers = participants.copy()
 random.shuffle(receivers)
 
-# Ensure that Santas and receivers are not the same person
+# Sicherstellen, dass Santa + Receiver nicht dieselbe Person ist
 while any(santa == receiver for santa, receiver in zip(santas, receivers)):
     random.shuffle(receivers)
 
-# Assign Secret Santas
+# Wichtelgruppierung erstellen
 santas_to_receivers = {santa: receiver for santa, receiver in zip(santas, receivers)}
 
 ort = input("Wann und Wo wird gewichtelt?: ")
