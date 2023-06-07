@@ -30,7 +30,6 @@ If you have a working python environment installed, you can just use the "secret
 If not, no problem, it's simple:
 - Download the zip file from the latest release [HERE](https://codeberg.org/noxis/secret_santa_generator/releases)
 - Unzip it and run the binary inside (i.e. secretsanta.exe)
-- If you are on linux, don't forget to open up a terminal an  "chmod +x secretsanta" to make the binary executable.
 
 ## Build from Source
 
