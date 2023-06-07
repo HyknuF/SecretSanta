@@ -38,7 +38,7 @@ print(intro)
 go = input("--- ENTER zum Starten --- | --- Strg+C zum Beenden --- ")
 print(go)
 
-# Get the number of participants
+# Anzahl der Teilnehmer definieren
 while True:
     try:
         teilnehmer = int(input('Wieviele Personen nehmen teil?: '))
@@ -46,7 +46,7 @@ while True:
     except ValueError:
         print("Fehler. Nur Ganzzahlen erlaubt.")
 
-# Get the name and email address of each participant
+# Name und E-Mailadresse
 fam = {}
 for i in range(1, teilnehmer + 1):
     name = input(f"Name von Teilnehmer {i} eingeben: ")
@@ -58,14 +58,14 @@ betrag = input("Wichtelbetrag in €: ")
 motto = input("Motto: ")
 sonstiges = input("Sonstiges?: ")
 
-# SELECT SECRET SANTAS
+# Wichtelgruppierung
 santas = list(np.random.choice(list(fam.keys()), len(list(fam.keys())), replace=False))
 receivers = [santas[k - 1] for k in range(len(santas))]
 
 subject = input("E-Mail Betreff: ")
 body_user = input("E-Mail Nachricht eingegebene (bereits eingebene Eckdaten werden automatisch ergänzt: ")
 
-# SENDING EMAILS
+# E-Mail versenden
 absender = input("Absender E-Mail eingeben: ")
 smtp_server = input("Bitte SMTP Server eingeben (z.B: smtp.gmail.com): ")
 port = 465
@@ -77,7 +77,7 @@ while attempts < max_attempts:
     password = getpass.getpass("Enter the SMTP password: ")
     print("Connecting...")
 
-    # Attempt to login to the SMTP server
+    # Login auf STMP-Server
     try:
         server = smtplib.SMTP_SSL(smtp_server, port)
         _, _ = server.login(absender, password)
@@ -94,7 +94,7 @@ if attempts == max_attempts:
     exit()
 
 
-# Ask for acknowledgment
+# Abschließende Bestätigung
 send_acknowledge = input("Sollen die E-Mails jetzt versendet werden (Ja/Nein)?: ")
 
 if send_acknowledge.lower() == 'ja':
