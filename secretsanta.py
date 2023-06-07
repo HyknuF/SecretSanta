@@ -1,5 +1,5 @@
+import random
 import os
-import numpy as np
 import smtplib
 import zipfile
 import getpass
@@ -42,7 +42,10 @@ print(go)
 while True:
     try:
         teilnehmer = int(input('Wieviele Personen nehmen teil?: '))
-        break
+        if teilnehmer != 1:
+            break
+        else:
+            print("Fehler. Alleine ist wichteln schwierig.")
     except ValueError:
         print("Fehler. Nur Ganzzahlen erlaubt.")
 
@@ -53,19 +56,29 @@ for i in range(1, teilnehmer + 1):
     email = input(f"E-Mail-Adresse von Teilnehmer {i} eingeben: ")
     name_adresse[name] = email
 
+# Generate a random order for Secret Santas
+participants = list(name_adresse.keys())
+random.shuffle(participants)
+
+santas = participants.copy()
+receivers = participants.copy()
+random.shuffle(receivers)
+
+# Ensure that Santas and receivers are not the same person
+while any(santa == receiver for santa, receiver in zip(santas, receivers)):
+    random.shuffle(receivers)
+
+# Assign Secret Santas
+santas_to_receivers = {santa: receiver for santa, receiver in zip(santas, receivers)}
+
 ort = input("Wann und Wo wird gewichtelt?: ")
 betrag = input("Wichtelbetrag in €: ")
 motto = input("Motto: ")
 sonstiges = input("Sonstiges?: ")
 
-# Wichtelgruppierung
-santas = list(np.random.choice(list(name_adresse.keys()), len(list(name_adresse.keys())), replace=False))
-receivers = [santas[k - 1] for k in range(len(santas))]
-
+# E-Mail versenden
 subject = input("E-Mail Betreff: ")
 body_user = input("E-Mail Nachricht eingegebene (bereits eingebene Eckdaten werden automatisch ergänzt: ")
-
-# E-Mail versenden
 absender = input("Absender E-Mail eingeben: ")
 smtp_server = input("Bitte SMTP Server eingeben (z.B: smtp.gmail.com): ")
 port = 465
@@ -98,22 +111,21 @@ if attempts == max_attempts:
 send_acknowledge = input("Sollen die E-Mails jetzt versendet werden (Ja/Nein)?: ")
 
 if send_acknowledge.lower() == 'ja':
-    for i, name in enumerate(name_adresse):
-        santa = santas[i]
+    for santa, receiver in santas_to_receivers.items():
 
         message = MIMEMultipart()
         message['From'] = absender
-        message['To'] = name_adresse[name]
+        message['To'] = name_adresse[santa]
         message['Subject'] = subject
 
-        body_gesamt = (f"{body_user} \
-            <br><br>Du darfst ein Geschenk besorgen fuer: <b>{santa}!</b> \
-            <br><br><b>Eckdaten:</b> \
-            <br><b>Ort:</b> {ort}, \
-            <br><b>Betrag in €:</b> {betrag} \
-            <br><b>Motto:</b> {motto} \
-            <br><b>Sonstiges:</b> {sonstiges} \
-            <br><br>Viel Spaß beim wichteln!")
+        body_gesamt = f"""{body_user}
+            <br><br>Du darfst ein Geschenk besorgen fuer: <b>{receiver}!</b>
+            <br><br><b>Eckdaten:</b>
+            <br><b>Ort:</b> {ort}
+            <br><b>Betrag:</b> € {betrag}
+            <br><b>Motto:</b> {motto}
+            <br><b>Sonstiges:</b> {sonstiges}
+            <br><br>Viel Spaß beim wichteln!"""
 
         message.attach(MIMEText(body_gesamt, 'html'))
 
@@ -128,10 +140,10 @@ else:
 zip_file_name = "secret_santa_output.zip"
 
 with zipfile.ZipFile(zip_file_name, "w") as zip_file:
-    for receiver, santa in zip(receivers, santas):
-        file_name = f"Darf nur von {receiver} geöffnet werden.txt"
+    for santa, receiver in santas_to_receivers.items():
+        file_name = f"Darf nur von {santa} geöffnet werden.txt"
         with open(file_name, "w") as file:
-            content = f"Dein Wichtelpartner: {santa.title()}\n"
+            content = f"Du darfst ein Geschenk besorgen für: {receiver.title()}\n"
             file.write(content)
         zip_file.write(file_name)
         os.remove(file_name)

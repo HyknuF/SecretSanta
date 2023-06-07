@@ -28,5 +28,10 @@ Last year, I couldn't find a tool with this feature set, so i wrote my own :)
 If you have a working python environment installed, you can just use the "secretsanta.py" and run it.
 
 If not, no problem, it's simple:
-- Download the zip file from the latest release [HERE](https://codeberg.org/noxis/secret_santa_generator/releases/tag/stable)
+- Download the zip file from the latest release [HERE](https://codeberg.org/noxis/secret_santa_generator/releases)
 - Unzip it and run the binary inside (i.e. secretsanta.exe)
+
+## Build from Source
+
+If you want to build your own binary from source, just download the secretsanta.py and install pyinstaller on your system (usually "**python -m pip install pyinstaller**").  
+Afterwards run "**pyinstaller secretsanta.py**" and let the magic happen :-)
