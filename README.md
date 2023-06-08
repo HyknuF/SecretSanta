@@ -14,7 +14,7 @@ Last year, I couldn't find a tool with this feature set, therefore i wrote my ow
 - The number of participants is dynamic and arbitrary.
 - **Communication with the mail server is SSL encrypted.**
 - It's a commandline tool, no fancy GUI and such. Only you and the text.
-- Cross-Platform: Linux / Windows tested (with binaries), MacOS not tested
+- Cross-Platform: Linux / Windows tested (with binaries), MacOS not tested but should run just fine.
 - It creates a zip-file with single txt-files for each participant. This becomes handy if an email doesn't reach the participant for any reason.
 
 ## Advantages
