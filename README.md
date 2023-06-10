@@ -1,10 +1,6 @@
-# Secret Santa Generator / Wichtelgenerator
+# Secret Santa Generator
 
-Free (as in Freedom) and Open Source Secret Santa generator!
-
-The Script itself is in german at the moment, but should be easy to use for everyone.
-
-I will provide an english version as soon as possible.
+Free (as in Freedom), simple and Open Source Secret Santa generator
 
 ## Background / Info
 
@@ -25,9 +21,9 @@ Last year, I couldn't find a tool with this feature set, therefore i wrote my ow
 
 ## Usage
 
-If you have a working python environment installed, you can just use the "secretsanta.py" and run it.
+If you have a working python environment installed, you can just use the "secretsanta_xx.py" in your preferred language and run it.
 
-If not, no problem, it's simple:
+If not, no problem, it's simple: (German version only so far)
 - Download the zip file from the latest release [HERE](https://codeberg.org/noxis/secret_santa_generator/releases)
 - Unzip it and run the binary inside (i.e. secretsanta.exe)
 
@@ -35,3 +31,7 @@ If not, no problem, it's simple:
 
 If you want to build your own binary from source, just download the secretsanta.py and install pyinstaller on your system (usually "**python -m pip install pyinstaller**").  
 Afterwards run "**pyinstaller secretsanta.py**" and let the magic happen :)
+
+## Todo
+
+- Find a delightful name
