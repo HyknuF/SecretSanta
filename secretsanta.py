@@ -78,7 +78,7 @@ sonstiges = input("Sonstiges?: ")
 
 # E-Mail versenden
 subject = input("E-Mail Betreff: ")
-body_user = input("E-Mail Nachricht eingegebene (bereits eingebene Eckdaten werden automatisch ergänzt: ")
+body_user = input("E-Mail Nachricht (bereits eingegebene Eckdaten werden automatisch ergänzt: ")
 absender = input("Absender E-Mail eingeben: ")
 smtp_server = input("Bitte SMTP Server eingeben (z.B: smtp.gmail.com): ")
 port = 465
