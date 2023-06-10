@@ -6,6 +6,7 @@ import getpass
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+# introtext
 intro = """
 ###################################################################################################################
 #
@@ -35,13 +36,13 @@ intro = """
 """
 print(intro)
 
-go = input("--- ENTER zum Starten --- | --- Strg+C zum Beenden --- ")
+go = input(_("--- ENTER zum Starten --- | --- Strg+C zum Beenden --- "))
 print(go)
 
 # Anzahl der Teilnehmer definieren
 while True:
     try:
-        teilnehmer = int(input('Wieviele Personen nehmen teil?: '))
+        teilnehmer = int(input(_('Wieviele Personen nehmen teil?: ')))
         if teilnehmer != 1:
             break
         else:
@@ -87,15 +88,15 @@ max_attempts = 3
 attempts = 0
 
 while attempts < max_attempts:
-    password = getpass.getpass("Enter the SMTP password: ")
-    print("Connecting...")
+    password = getpass.getpass("SMTP-Passwort eingeben: : ")
+    print("Verbindung wird hergestellt...")
 
     # Login auf STMP-Server
     try:
         server = smtplib.SMTP_SSL(smtp_server, port)
         _, _ = server.login(absender, password)
         server.quit()
-        print("Password OK")
+        print("Passwort OK")
         break
     except smtplib.SMTPAuthenticationError:
         attempts += 1
