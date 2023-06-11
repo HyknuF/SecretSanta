@@ -36,13 +36,13 @@ intro = """
 """
 print(intro)
 
-go = input(_("--- ENTER zum Starten --- | --- Strg+C zum Beenden --- "))
+go = input("--- ENTER zum Starten --- | --- Strg+C zum Beenden --- ")
 print(go)
 
 # Anzahl der Teilnehmer definieren
 while True:
     try:
-        teilnehmer = int(input(_('Wieviele Personen nehmen teil?: ')))
+        teilnehmer = int(input('Wieviele Personen nehmen teil?: '))
         if teilnehmer != 1:
             break
         else:
